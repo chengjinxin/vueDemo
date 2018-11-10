@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ msg }}</h1>
+        <input type="text" style="width: 100%;" v-model="msg"/>
+    </div>
+    <script>
+        var xm = new Vue({
+            el:'#app',
+                data:{
+                msg:'刘希晗叫爸爸'
+        }
+        })
+    </script>
+</body>
+</html>

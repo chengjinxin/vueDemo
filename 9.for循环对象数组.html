@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <p v-for="(user,i) in list">--Id:--{{user.id }}----索引:--{{ i }}---Name----{{ user.name }}</p>
+</div>
+<script>
+    var xm = new Vue({
+        el:'#app',
+        data:{
+            list:[
+                { id:1, name:'lxh1' },
+                { id:2, name:'lxh2' },
+                { id:3, name:'lxh3' },
+                { id:4, name:'lxh4' },
+                { id:5, name:'lxh5' }
+            ]
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

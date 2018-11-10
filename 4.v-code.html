@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--<p v-text="msg"></p>-->
+    <!--<p v-text="msg1"></p>-->
+    <!--<div v-html="msg1"></div>-->
+    <!--<div>{{msg1}}</div>-->
+    <!--<div>{{msg}}</div>-->
+    <div v-html="msg1">-------怎么办</div>
+    <div v-text="msg">-----</div>
+    <div v-clock>--------{{msg1}}---</div>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'123',
+            msg1:'<h1>这是h1标签</h1>',
+            mytitle:'自己定义title标签'
+        },
+        methods:{
+            show() {
+            alert('你好')
+            }
+        }
+    })
+</script>
+</body>
+</html>
