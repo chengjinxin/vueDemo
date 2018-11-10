@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="n1"/>
+
+        <select name="" id="">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <input type="text" v-model="n2"/>
+        <input type="button" value="=" @click="clac"/>
+        <input type="text" v-model="result"/>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                n1:0,
+                n2:0,
+                result:0
+            },
+            methods:{
+                clac(){
+            if (this.n1 === '刘希晗' || this.n2 === '刘希晗') {
+                this.result = '两个刘希晗'
+            }
+        }
+            }
+
+        })
+    </script>
+</body>
+</html>

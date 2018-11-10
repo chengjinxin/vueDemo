@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-for="(val,key,i) in list">---值:--{{val}}---键:---{{key}}----索引:{{i}}</p>
+    </div>
+    <script>
+        var xm = new Vue({
+            el:'#app',
+            data:{
+                list:{
+                    username:'cjx',
+                    age:22,
+                    gender:'男'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

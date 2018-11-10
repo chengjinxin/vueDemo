@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<!--in后面不止可以放数组,数组对象,对象,还可以放数字-->
+    <!--v-for迭代数字,前面的count值从1开始-->
+    <div id="app">
+        <p v-for="count in 10">------{{count}}---count是循环的次数</p>
+    </div>
+    <script>
+        var xm = new Vue({
+            el:'#app',
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>
