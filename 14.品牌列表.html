@@ -50,7 +50,7 @@
             <tr v-for='item in result(keywords)' :key='item.id'>
                 <td>{{ item.id }}</td>
                 <td>{{ item.name }}</td>
-                <td>{{ item.ctime }}</td>
+                <td>{{ item.ctime | forTime('') }}</td>
                 <td>
                     <a href="" @click.prevent='btn(item.id)'>删除</a>
                 </td>
@@ -60,6 +60,29 @@
     
 </div>
 <script>
+    //创建全局过滤器
+    Vue.filter('forTime',function(iTime,smollDate){
+        var dt = new Date(iTime)
+
+        var y = dt.getFullYear()
+        var m = dt.getMonth() + 1
+        var s = dt.getDate()
+
+        
+
+        if(smollDate.toLowerCase()=== 'yyyy-mm-dd'){
+            return `${y}-${m}-${s}`
+        }else {
+            var hh = dt.getHours()
+            var mm = dt.getMinutes()
+            var ss = dt.getSeconds()
+            return `${y}-${m}-${s} ${hh}:${mm}:${ss}`
+        }
+    })
+
+
+
+
     var vm = new Vue({
     el: '#app',
     data: {
@@ -89,7 +112,7 @@
             var listArr = []
             this.list.forEach(item => {
                 if(item.name.indexOf(keywords) != -1) {
-                listArr.push(item)
+                listArr .push(item)
                 }
             })
             return listArr
