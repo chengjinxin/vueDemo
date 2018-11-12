@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<script src="lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="消失和出现" @click='btn'>
+    <p v-if='flog'>也长梦很多 ,也长梦很多也长梦很多</p>
+</div>
+<script>
+    var vm = new Vue({
+    el: '#app',
+    data: {
+        flog :true
+    },
+    methods: {
+        btn(){
+            this.flog = !this.flog
+        }
+    }
+})
+</script>
+</body>
+</html>
