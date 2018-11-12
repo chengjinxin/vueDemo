@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<script src="lib/vue-2.4.0.js"></script>
+<style>
+    .btn{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    .v-center,
+    .v-leave-to {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    .v-center-active,
+    .v-leave-active{
+        transition: all 8s ease;
+    }
+</style>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="按钮" @click='btn'>
+    <transition>
+            <div class="btn" v-if='flag'></div>
+    </transition>      
+    
+</div>
+<script>
+    var vm = new Vue({
+    el: '#app',
+    data: {
+        flag:true
+    },
+    methods: {
+        btn(){
+            this.flag = !this.flag
+        }
+    }
+})
+</script>
+</body>
+</html>
