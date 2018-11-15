@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<script src="lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- 通过属性绑定才能将父组件中的值传给子组件 -->
+    <com1 v-bind:parentmsg='msg'></com1>
+</div>
+<script>
+    var vm = new Vue({
+    el: '#app',
+    data: {
+        msg:'父组件中的数据'
+    },
+    methods: {},
+
+    components:{
+        com1:{
+            // 子组件
+            template:'<h1 @click="change">这是子组件 {{ parentmsg }}</h1>',
+            // props中的数据是只读的
+            props:['parentmsg'],
+            //只有在proops中定义一下,传过来的数据才能使用
+            methods:{
+                change(){
+                    this.parentmsg = '被修改了'
+                }
+            }
+        }
+    }
+})
+</script>
+</body>
+</html>
